@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Managed Transit Configurations') }} - {{ _('GOST Tunnel Manager') }}{% endblock %}
+
+{% block content %}
+    <h1>{{ _('Managed Transit Configurations') }}</h1>
+    {# Flashed messages are handled by base.html #}
+
+    <p><a href="{{ url_for('add_transit') }}" class="button-style button-success">{{ _('Add New Transit Configuration') }}</a></p>
+
+    <form method="POST" action="{{ url_for('apply_gost_config') }}" style="margin-top: 15px; margin-bottom: 15px;">
+        <button type="submit" class="button-style button-danger" 
+                onclick="return confirm('{{ _('Are you sure you want to apply all configurations (pending, active, error) and restart GOST? This will overwrite the current GOST config file.') }}');">
+            {{ _('Apply All Configurations & Restart GOST') }}
+        </button>
+    </form>
+
+    {% if transits %}
+        <table>
+            <thead>
+                <tr>
+                    <th>{{ _('ID') }}</th>
+                    <th>{{ _('Name') }}</th>
+                    <th>{{ _('Server A') }}</th>
+                    <th>{{ _('Srv A Port') }}</th>
+                    <th>{{ _('Server B') }}</th>
+                    <th>{{ _('Srv B Port') }}</th>
+                    <th>{{ _('Protocol') }}</th>
+                    <th>{{ _('Dest. IP:Port') }}</th>
+                    <th>{{ _('Status') }}</th>
+                    <th>{{ _('Latency (ms)') }}</th>
+                    <th>{{ _('Created At') }}</th>
+                    <!-- <th>{{ _('Actions') }}</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for transit in transits %}
+                <tr>
+                    <td>{{ transit.id }}</td>
+                    <td>{{ transit.name }}</td>
+                    <td>{{ transit.server_a.name if transit.server_a else 'N/A' }}</td>
+                    <td>{{ transit.server_a_listen_port }}</td>
+                    <td>{{ transit.server_b.name if transit.server_b else 'N/A' }}</td>
+                    <td>{{ transit.server_b_connect_port }}</td>
+                    <td>{{ transit.encryption_protocol }}</td>
+                    <td>{{ transit.destination_ip }}:{{ transit.destination_port }}</td>
+                    <td class="status-{{ transit.status.lower() if transit.status else 'unknown' }}">{{ transit.status }}</td>
+                    <td>{{ transit.latency_ms if transit.latency_ms is not none else 'N/A' }}</td>
+                    <td>{{ transit.created_at.strftime('%Y-%m-%d %H:%M:%S') if transit.created_at else 'N/A' }}</td>
+                    <!-- <td class="actions"> -->
+                        <!-- Example actions -->
+                    <!-- </td> -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="no-data">{{ _('No transit configurations have been added yet.') }}</p>
+    {% endif %}
+{% endblock %}

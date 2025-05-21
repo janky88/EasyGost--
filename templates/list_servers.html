@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Managed Servers') }} - {{ _('GOST Tunnel Manager') }}{% endblock %}
+
+{% block content %}
+    <h1>{{ _('Managed Servers') }}</h1>
+    {# Flashed messages are handled by base.html #}
+
+    <p><a href="{{ url_for('add_server') }}" class="button-style button-success">{{ _('Add New Server') }}</a></p>
+
+    {% if servers %}
+        <table>
+            <thead>
+                <tr>
+                    <th>{{ _('ID') }}</th>
+                    <th>{{ _('Name') }}</th>
+                    <th>{{ _('IP Address') }}</th>
+                    <th>{{ _('SSH Username') }}</th>
+                    <th>{{ _('SSH Port') }}</th>
+                    <th>{{ _('Status') }}</th>
+                    <th>{{ _('Created At') }}</th>
+                    <th>{{ _('Updated At') }}</th>
+                    <!-- <th>{{ _('Actions') }}</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for server in servers %}
+                <tr>
+                    <td>{{ server.id }}</td>
+                    <td>{{ server.name }}</td>
+                    <td>{{ server.ip_address }}</td>
+                    <td>{{ server.ssh_username }}</td>
+                    <td>{{ server.ssh_port }}</td>
+                    <td class="status-{{ server.connection_status.lower() if server.connection_status else 'unknown' }}">{{ server.connection_status }}</td>
+                    <td>{{ server.created_at.strftime('%Y-%m-%d %H:%M:%S') if server.created_at else 'N/A' }}</td>
+                    <td>{{ server.updated_at.strftime('%Y-%m-%d %H:%M:%S') if server.updated_at else 'N/A' }}</td>
+                    {# <td class="actions"> #}
+                        {# Example: <a href="{{ url_for('edit_server', server_id=server.id) }}" class="action-link edit">{{ _('Edit') }}</a> #}
+                        {# Example: <a href="{{ url_for('delete_server', server_id=server.id) }}" class="action-link delete" onclick="return confirm('{{ _('Are you sure?') }}');">{{ _('Delete') }}</a> #}
+                    {# </td> #}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="no-data">{{ _('No servers have been added yet.') }}</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"> {# Consider making 'en' dynamic if supporting multiple languages beyond zh #}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ _('GOST Tunnel Manager') }}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('hello_world') }}" class="nav-brand">{{ _('GOST Manager') }}</a>
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('hello_world') }}">{{ _('Home') }}</a></li>
+                <li><a href="{{ url_for('add_server') }}">{{ _('Add Server') }}</a></li>
+                <li><a href="{{ url_for('list_servers') }}">{{ _('List Servers') }}</a></li>
+                <li><a href="{{ url_for('add_transit') }}">{{ _('Add Transit') }}</a></li>
+                <li><a href="{{ url_for('list_transits') }}">{{ _('List Transits') }}</a></li>
+                <li><a href="{{ url_for('status_page') }}">{{ _('System Status') }}</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flashed-messages">
+                {% for category, message in messages %}
+                    {# Messages from flash() are already processed by _() in Python code #}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; {{ now().year }} {{ _('GOST Tunnel Management. All rights reserved.') }}</p>
+    </footer>
+
+    {# Script for auto-hiding flashed messages after a few seconds (optional) #}
+    <script>
+        setTimeout(function() {
+            let messages = document.querySelectorAll('.flashed-messages .alert');
+            messages.forEach(function(message) {
+                message.style.opacity = '0';
+                setTimeout(function() {
+                    message.style.display = 'none';
+                }, 600); // Matches transition time
+            });
+        }, 5000); // Hide after 5 seconds
+    </script>
+</body>
+</html>

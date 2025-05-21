@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Add New Server') }} - {{ _('GOST Tunnel Manager') }}{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <h1>{{ _('Add New Server') }}</h1>
+        {# Flashed messages are handled by base.html #}
+        <form method="POST" action="{{ url_for('add_server') }}">
+            <div class="form-group">
+                <label for="server_name">{{ _('Server Name:') }}</label>
+                <input type="text" id="server_name" name="server_name" value="{{ request.form.server_name if request.form else '' }}" required>
+            </div>
+            <div class="form-group">
+                <label for="ip_address">{{ _('IP Address / Hostname:') }}</label>
+                <input type="text" id="ip_address" name="ip_address" value="{{ request.form.ip_address if request.form else '' }}" required>
+            </div>
+            <div class="form-group">
+                <label for="ssh_username">{{ _('SSH Username:') }}</label>
+                <input type="text" id="ssh_username" name="ssh_username" value="{{ request.form.ssh_username if request.form else '' }}" required>
+            </div>
+            <div class="form-group">
+                <label for="ssh_password">{{ _('SSH Password:') }}</label>
+                <input type="password" id="ssh_password" name="ssh_password" required>
+            </div>
+            <div class="form-group">
+                <label for="ssh_port">{{ _('SSH Port:') }}</label>
+                <input type="number" id="ssh_port" name="ssh_port" value="{{ request.form.ssh_port if request.form else '22' }}" required>
+            </div>
+            <button type="submit" class="button-style button-success">{{ _('Add Server') }}</button>
+        </form>
+    </div>
+{% endblock %}

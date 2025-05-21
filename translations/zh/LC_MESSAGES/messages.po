@@ -1,0 +1,605 @@
+# Chinese translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-05-21 00:58+0000\n"
+"PO-Revision-Date: 2025-05-21 00:59+0000\n"
+"Last-Translator: AI Assistant\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app.py:70
+msgid "SSH Port must be a number."
+msgstr "SSH端口必须是数字。"
+
+#: app.py:74
+msgid "All fields (Server Name, IP, Username, Password) are required!"
+msgstr "所有字段（服务器名称、IP、用户名、密码）都是必填项！"
+
+#: app.py:80
+#, python-format
+msgid "Server name '%(server_name)s' already exists."
+msgstr "服务器名称“%(server_name)s”已存在。"
+
+#: app.py:85
+#, python-format
+msgid "IP address '%(ip_address)s' already exists for server '%(server_name)s'."
+msgstr "IP地址“%(ip_address)s”已用于服务器“%(server_name)s”。"
+
+#: app.py:106
+#, python-format
+msgid "Server '%(server_name)s' added successfully and connection verified!"
+msgstr "服务器“%(server_name)s”添加成功并已验证连接！"
+
+#: app.py:109
+#, python-format
+msgid "Error saving server to database: %(error)s"
+msgstr "保存服务器到数据库时出错：%(error)s"
+
+#: app.py:112
+#, python-format
+msgid "Could not connect to server '%(server_name)s': %(conn_test_msg)s"
+msgstr "无法连接到服务器“%(server_name)s”：%(conn_test_msg)s"
+
+#: app.py:138
+msgid "All fields are required!"
+msgstr "所有字段均为必填项！"
+
+#: app.py:144
+msgid "Server A and Server B cannot be the same server."
+msgstr "服务器A和服务器B不能是同一台服务器。"
+
+#: app.py:154
+msgid "Server A Listen Port"
+msgstr "服务器A监听端口"
+
+#: app.py:155
+msgid "Server B Connect Port"
+msgstr "服务器B连接端口"
+
+#: app.py:156
+msgid "Destination Port"
+msgstr "目标端口"
+
+#: app.py:160
+#, python-format
+msgid "%(port_name)s must be between 1 and 65535."
+msgstr "%(port_name)s 必须在1和65535之间。"
+
+#: app.py:164
+msgid "All port numbers must be valid integers."
+msgstr "所有端口号必须是有效的整数。"
+
+#: app.py:173
+#, python-format
+msgid "Selected Server A (ID: %(server_id)s) does not exist."
+msgstr "选择的服务器A (ID: %(server_id)s) 不存在。"
+
+#: app.py:177
+#, python-format
+msgid "Selected Server B (ID: %(server_id)s) does not exist."
+msgstr "选择的服务器B (ID: %(server_id)s) 不存在。"
+
+#: app.py:184
+#, python-format
+msgid "Transit name '%(transit_name)s' already exists."
+msgstr "中转配置名称“%(transit_name)s”已存在。"
+
+#: app.py:210
+#, python-format
+msgid ""
+"Transit configuration '%(transit_name)s' added successfully with status "
+"'pending'."
+msgstr "中转配置“%(transit_name)s”添加成功，状态为“待处理”。"
+
+#: app.py:214
+#, python-format
+msgid "Error saving transit configuration to database: %(error)s"
+msgstr "保存中转配置到数据库时出错：%(error)s"
+
+#: app.py:221
+msgid ""
+"No servers found. Please add at least two servers before creating a "
+"transit."
+msgstr "未找到服务器。请至少添加两台服务器后再创建中转配置。"
+
+#: app.py:268
+#, python-format
+msgid "Successfully wrote GOST configuration to %(config_path)s."
+msgstr "成功将GOST配置写入 %(config_path)s。"
+
+#: app.py:270
+msgid "Unknown error moving config file."
+msgstr "移动配置文件时发生未知错误。"
+
+#: app.py:272
+#, python-format
+msgid ""
+"Failed to write GOST config to %(config_path)s: %(error_msg)s. Please "
+"check permissions or try manually: `sudo mv %(temp_config_path)s "
+"%(config_path)s`"
+msgstr ""
+"写入GOST配置到 %(config_path)s 失败：%(error_msg)s。请检查权限或尝试手动执行：`sudo mv "
+"%(temp_config_path)s %(config_path)s`"
+
+#: app.py:279
+#, python-format
+msgid "Successfully wrote GOST configuration to %(config_path)s (direct method)."
+msgstr "成功将GOST配置写入 %(config_path)s（直接写入方式）。"
+
+#: app.py:281
+#, python-format
+msgid "Permission denied writing directly to %(config_path)s. %(error)s"
+msgstr "直接写入 %(config_path)s 权限被拒绝。%(error)s"
+
+#: app.py:282 app.py:285 app.py:289
+#, python-format
+msgid "Failed to write GOST config: %(error_msg)s"
+msgstr "写入GOST配置失败：%(error_msg)s"
+
+#: app.py:284
+#, python-format
+msgid "Error writing directly to %(config_path)s: %(error)s"
+msgstr "直接写入 %(config_path)s 时出错：%(error)s"
+
+#: app.py:288
+#, python-format
+msgid "Error preparing or writing GOST config: %(error)s"
+msgstr "准备或写入GOST配置时出错：%(error)s"
+
+#: app.py:296
+#, python-format
+msgid "GOST service restarted successfully. %(restart_msg)s"
+msgstr "GOST服务重启成功。%(restart_msg)s"
+
+#: app.py:302
+msgid "Relevant transit statuses updated to 'active'."
+msgstr "相关中转配置状态已更新为“活动”。"
+
+#: app.py:305
+#, python-format
+msgid "Error updating transit statuses: %(error)s"
+msgstr "更新中转配置状态时出错：%(error)s"
+
+#: app.py:307
+#, python-format
+msgid "Failed to restart GOST service: %(restart_msg)s. Manual check required."
+msgstr "重启GOST服务失败：%(restart_msg)s。需要手动检查。"
+
+#: app.py:314
+msgid "Relevant transit statuses updated to 'error' due to GOST restart failure."
+msgstr "由于GOST重启失败，相关中转配置状态已更新为“错误”。"
+
+#: app.py:317 app.py:330
+#, python-format
+msgid "Error updating transit statuses to 'error': %(error)s"
+msgstr "更新中转配置状态为“错误”时出错：%(error)s"
+
+#: app.py:320
+msgid "GOST service was not restarted due to configuration write failure."
+msgstr "由于配置写入失败，GOST服务未重启。"
+
+#: app.py:327
+msgid "Pending transit statuses updated to 'error' due to config write failure."
+msgstr "由于配置写入失败，待处理的中转配置状态已更新为“错误”。"
+
+#: utils.py:75
+#, python-format
+msgid "%(action)s %(service_name)s successful."
+msgstr "%(action)s %(service_name)s 成功。"
+
+#: utils.py:77
+#, python-format
+msgid "Unknown error during %(action)s %(service_name)s."
+msgstr "在 %(action)s %(service_name)s 期间发生未知错误。"
+
+#: utils.py:85
+msgid "Error: 'sudo' or 'systemctl' command not found. Make sure it's in PATH."
+msgstr "错误：“sudo”或“systemctl”命令未找到。请确保它在PATH中。"
+
+#: utils.py:86
+msgid "'sudo' or 'systemctl' command not found."
+msgstr "未找到“sudo”或“systemctl”命令。"
+
+#: utils.py:88
+#, python-format
+msgid "Error: Command '%(command)s' timed out."
+msgstr "错误：命令“%(command)s”超时。"
+
+#: utils.py:89
+#, python-format
+msgid "Command to %(action)s %(service_name)s timed out."
+msgstr "执行 %(action)s %(service_name)s 的命令超时。"
+
+#: utils.py:91
+#, python-format
+msgid ""
+"An unexpected error occurred while trying to %(action)s %(service_name)s:"
+" %(error)s"
+msgstr "尝试 %(action)s %(service_name)s 时发生意外错误：%(error)s"
+
+#: utils.py:92
+#, python-format
+msgid "An unexpected error occurred: %(error)s"
+msgstr "发生意外错误：%(error)s"
+
+#: utils.py:104
+msgid "Password cannot be empty for SSH test."
+msgstr "SSH测试的密码不能为空。"
+
+#: utils.py:109
+msgid "Authentication failed (wrong username or password)."
+msgstr "身份验证失败（用户名或密码错误）。"
+
+#: utils.py:111
+#, python-format
+msgid "SSH error: %(error)s"
+msgstr "SSH错误：%(error)s"
+
+#: utils.py:113
+#, python-format
+msgid "Network error: %(error)s"
+msgstr "网络错误：%(error)s"
+
+#: utils.py:115
+#, python-format
+msgid "Connection timed out to %(ip)s:%(port)s."
+msgstr "连接到 %(ip)s:%(port)s 超时。"
+
+#: templates/add_server.html:3 templates/add_server.html:7
+#: templates/index.html:16 templates/list_servers.html:9
+msgid "Add New Server"
+msgstr "添加新服务器"
+
+#: templates/add_server.html:3 templates/add_transit.html:3
+#: templates/base.html:6 templates/index.html:3 templates/list_servers.html:3
+#: templates/list_transits.html:3 templates/status_display.html:3
+msgid "GOST Tunnel Manager"
+msgstr "GOST隧道管理器"
+
+#: templates/add_server.html:11
+msgid "Server Name:"
+msgstr "服务器名称："
+
+#: templates/add_server.html:15
+msgid "IP Address / Hostname:"
+msgstr "IP地址/主机名："
+
+#: templates/add_server.html:19
+msgid "SSH Username:"
+msgstr "SSH用户名："
+
+#: templates/add_server.html:23
+msgid "SSH Password:"
+msgstr "SSH密码："
+
+#: templates/add_server.html:27
+msgid "SSH Port:"
+msgstr "SSH端口："
+
+#: templates/add_server.html:30 templates/base.html:15
+msgid "Add Server"
+msgstr "添加服务器"
+
+#: templates/add_transit.html:3 templates/add_transit.html:74
+msgid "Add Transit Configuration"
+msgstr "添加中转配置"
+
+#: templates/add_transit.html:7 templates/list_transits.html:9
+msgid "Add New Transit Configuration"
+msgstr "添加新的中转配置"
+
+#: templates/add_transit.html:12
+msgid "Transit Name:"
+msgstr "中转名称："
+
+#: templates/add_transit.html:18
+msgid "Server A (Listen Server):"
+msgstr "服务器A (监听服务器):"
+
+#: templates/add_transit.html:20
+msgid "Select Server A"
+msgstr "选择服务器A"
+
+#: templates/add_transit.html:29
+msgid "Server A Listen Port:"
+msgstr "服务器A监听端口："
+
+#: templates/add_transit.html:30
+msgid "e.g., 8080"
+msgstr "例如, 8080"
+
+#: templates/add_transit.html:36
+msgid "Server B (Connect Server):"
+msgstr "服务器B (连接服务器):"
+
+#: templates/add_transit.html:38
+msgid "Select Server B"
+msgstr "选择服务器B"
+
+#: templates/add_transit.html:47
+msgid "Server B Connect Port:"
+msgstr "服务器B连接端口："
+
+#: templates/add_transit.html:48
+msgid "e.g., 8081"
+msgstr "例如, 8081"
+
+#: templates/add_transit.html:53
+msgid "Forwarding Protocol (Server A to Server B):"
+msgstr "转发协议 (服务器A到服务器B):"
+
+#: templates/add_transit.html:55
+msgid "ws (WebSocket)"
+msgstr "ws (WebSocket)"
+
+#: templates/add_transit.html:56
+msgid "wss (Secure WebSocket)"
+msgstr "wss (安全WebSocket)"
+
+#: templates/add_transit.html:57
+msgid "relay+tls (Relay over TLS)"
+msgstr "relay+tls (TLS中继)"
+
+#: templates/add_transit.html:58
+msgid "tcp (Plain TCP)"
+msgstr "tcp (普通TCP)"
+
+#: templates/add_transit.html:59
+msgid "udp (Plain UDP)"
+msgstr "udp (普通UDP)"
+
+#: templates/add_transit.html:65
+msgid "Final Destination IP (via Server B):"
+msgstr "最终目标IP (通过服务器B):"
+
+#: templates/add_transit.html:66
+msgid "e.g., 1.1.1.1 or example.com"
+msgstr "例如, 1.1.1.1 或 example.com"
+
+#: templates/add_transit.html:69
+msgid "Final Destination Port:"
+msgstr "最终目标端口："
+
+#: templates/add_transit.html:70
+msgid "e.g., 80 or 443"
+msgstr "例如, 80 或 443"
+
+#: templates/base.html:12
+msgid "GOST Manager"
+msgstr "GOST管理器"
+
+#: templates/base.html:14 templates/index.html:3
+msgid "Home"
+msgstr "首页"
+
+#: templates/base.html:16
+msgid "List Servers"
+msgstr "服务器列表"
+
+#: templates/base.html:17
+msgid "Add Transit"
+msgstr "添加中转"
+
+#: templates/base.html:18
+msgid "List Transits"
+msgstr "中转列表"
+
+#: templates/base.html:19 templates/status_display.html:3
+msgid "System Status"
+msgstr "系统状态"
+
+#: templates/base.html:41
+msgid "GOST Tunnel Management. All rights reserved."
+msgstr "GOST隧道管理。版权所有。"
+
+#: templates/index.html:7
+msgid "Welcome to GOST Tunnel Manager"
+msgstr "欢迎使用GOST隧道管理器"
+
+#: templates/index.html:9
+msgid ""
+"This application helps you manage GOST (GO Simple Tunnel) servers and "
+"transit configurations with ease. Configure your servers, set up transit "
+"rules, and monitor their status all in one place."
+msgstr "此应用程序可帮助您轻松管理GOST（GO简单隧道）服务器和中转配置。在一处配置服务器、设置中转规则并监控其状态。"
+
+#: templates/index.html:13
+msgid "Get started by adding a server or setting up a new transit configuration."
+msgstr "开始使用，请添加服务器或设置新的中转配置。"
+
+#: templates/index.html:17
+msgid "Add Transit Config"
+msgstr "添加中转配置"
+
+#: templates/index.html:18
+msgid "View System Status"
+msgstr "查看系统状态"
+
+#: templates/index.html:23
+msgid "Key Features:"
+msgstr "主要功能："
+
+#: templates/index.html:26
+msgid "Manage Servers"
+msgstr "管理服务器"
+
+#: templates/index.html:27
+msgid ""
+"Add, list, and manage your GOST servers. Store connection details "
+"securely."
+msgstr "添加、列出和管理您的GOST服务器。安全地存储连接详细信息。"
+
+#: templates/index.html:30
+msgid "Configure Transits"
+msgstr "配置中转"
+
+#: templates/index.html:31
+msgid ""
+"Define rules for traffic forwarding between your servers and to final "
+"destinations."
+msgstr "定义服务器之间以及到最终目的地的流量转发规则。"
+
+#: templates/index.html:34
+msgid "Monitor Status"
+msgstr "监控状态"
+
+#: templates/index.html:35
+msgid "View the current status of your servers and transit configurations."
+msgstr "查看您的服务器和中转配置的当前状态。"
+
+#: templates/index.html:38
+msgid "Apply Configurations"
+msgstr "应用配置"
+
+#: templates/index.html:39
+msgid ""
+"Generate and apply GOST configurations to your servers with a single "
+"click."
+msgstr "一键生成GOST配置并将其应用于您的服务器。"
+
+#: templates/list_servers.html:3 templates/list_servers.html:6
+msgid "Managed Servers"
+msgstr "托管服务器"
+
+#: templates/list_servers.html:15 templates/list_transits.html:22
+msgid "ID"
+msgstr "ID"
+
+#: templates/list_servers.html:16 templates/list_transits.html:23
+#: templates/status_display.html:14 templates/status_display.html:42
+msgid "Name"
+msgstr "名称"
+
+#: templates/list_servers.html:17 templates/status_display.html:15
+msgid "IP Address"
+msgstr "IP地址"
+
+#: templates/list_servers.html:18 templates/status_display.html:17
+msgid "SSH Username"
+msgstr "SSH用户名"
+
+#: templates/list_servers.html:19 templates/status_display.html:16
+msgid "SSH Port"
+msgstr "SSH端口"
+
+#: templates/list_servers.html:20 templates/list_transits.html:30
+#: templates/status_display.html:18 templates/status_display.html:50
+msgid "Status"
+msgstr "状态"
+
+#: templates/list_servers.html:21 templates/list_transits.html:32
+msgid "Created At"
+msgstr "创建于"
+
+#: templates/list_servers.html:22
+msgid "Updated At"
+msgstr "更新于"
+
+#: templates/list_servers.html:23 templates/list_transits.html:33
+msgid "Actions"
+msgstr "操作"
+
+#: templates/list_servers.html:38
+msgid "Edit"
+msgstr "编辑"
+
+#: templates/list_servers.html:39
+msgid "Are you sure?"
+msgstr "您确定吗？"
+
+#: templates/list_servers.html:39
+msgid "Delete"
+msgstr "删除"
+
+#: templates/list_servers.html:46 templates/status_display.html:34
+msgid "No servers have been added yet."
+msgstr "尚未添加任何服务器。"
+
+#: templates/list_transits.html:3 templates/list_transits.html:6
+msgid "Managed Transit Configurations"
+msgstr "托管中转配置"
+
+#: templates/list_transits.html:13
+msgid ""
+"Are you sure you want to apply all configurations (pending, active, "
+"error) and restart GOST? This will overwrite the current GOST config "
+"file."
+msgstr "您确定要应用所有配置（待处理、活动、错误）并重启GOST吗？这将覆盖当前的GOST配置文件。"
+
+#: templates/list_transits.html:14
+msgid "Apply All Configurations & Restart GOST"
+msgstr "应用所有配置并重启GOST"
+
+#: templates/list_transits.html:24 templates/status_display.html:43
+msgid "Server A"
+msgstr "服务器A"
+
+#: templates/list_transits.html:25 templates/status_display.html:44
+msgid "Srv A Port"
+msgstr "服务A端口"
+
+#: templates/list_transits.html:26 templates/status_display.html:45
+msgid "Server B"
+msgstr "服务器B"
+
+#: templates/list_transits.html:27 templates/status_display.html:46
+msgid "Srv B Port"
+msgstr "服务B端口"
+
+#: templates/list_transits.html:28 templates/status_display.html:47
+msgid "Protocol"
+msgstr "协议"
+
+#: templates/list_transits.html:29 templates/status_display.html:48
+msgid "Dest. IP:Port"
+msgstr "目标IP:端口"
+
+#: templates/list_transits.html:31 templates/status_display.html:49
+msgid "Latency (ms)"
+msgstr "延迟 (ms)"
+
+#: templates/list_transits.html:58 templates/status_display.html:70
+msgid "No transit configurations have been added yet."
+msgstr "尚未添加任何中转配置。"
+
+#: templates/status_display.html:6
+msgid "System Status Dashboard"
+msgstr "系统状态仪表盘"
+
+#: templates/status_display.html:9
+msgid "Servers Status"
+msgstr "服务器状态"
+
+#: templates/status_display.html:18
+msgid "Connection Status"
+msgstr "连接状态"
+
+#: templates/status_display.html:37
+msgid "Transit Records"
+msgstr "中转记录"
+
+#~ msgid "Password cannot be empty for SSH test."
+#~ msgstr "SSH测试的密码不能为空。"
+
+#~ msgid "Authentication failed (wrong username or password)."
+#~ msgstr "身份验证失败（用户名或密码错误）。"
+
+#~ msgid "SSH error: %(error)s"
+#~ msgstr "SSH错误：%(error)s"
+
+#~ msgid "Network error: %(error)s"
+#~ msgstr "网络错误：%(error)s"
+
+#~ msgid "Connection timed out to %(ip)s:%(port)s."
+#~ msgstr "连接到 %(ip)s:%(port)s 超时。"

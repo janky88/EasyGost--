@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Home') }} - {{ _('GOST Tunnel Manager') }}{% endblock %}
+
+{% block content %}
+    <div class="hero-section">
+        <h1>{{ _('Welcome to GOST Tunnel Manager') }}</h1>
+        <p class="lead">
+            {{ _('This application helps you manage GOST (GO Simple Tunnel) servers and transit configurations with ease. Configure your servers, set up transit rules, and monitor their status all in one place.') }}
+        </p>
+        <hr class="my-4">
+        <p>
+            {{ _('Get started by adding a server or setting up a new transit configuration.') }}
+        </p>
+        <div class="home-actions">
+            <a href="{{ url_for('add_server') }}" class="button-style button-success">{{ _('Add New Server') }}</a>
+            <a href="{{ url_for('add_transit') }}" class="button-style">{{ _('Add Transit Config') }}</a>
+            <a href="{{ url_for('status_page') }}" class="button-style">{{ _('View System Status') }}</a>
+        </div>
+    </div>
+
+    <div class="features-overview">
+        <h2>{{ _('Key Features:') }}</h2>
+        <div class="feature-cards">
+            <div class="card">
+                <h3>{{ _('Manage Servers') }}</h3>
+                <p>{{ _('Add, list, and manage your GOST servers. Store connection details securely.') }}</p>
+            </div>
+            <div class="card">
+                <h3>{{ _('Configure Transits') }}</h3>
+                <p>{{ _('Define rules for traffic forwarding between your servers and to final destinations.') }}</p>
+            </div>
+            <div class="card">
+                <h3>{{ _('Monitor Status') }}</h3>
+                <p>{{ _('View the current status of your servers and transit configurations.') }}</p>
+            </div>
+            <div class="card">
+                <h3>{{ _('Apply Configurations') }}</h3>
+                <p>{{ _('Generate and apply GOST configurations to your servers with a single click.') }}</p>
+            </div>
+        </div>
+    </div>
+
+<style>
+    .hero-section {
+        text-align: center;
+        padding: 2rem 1rem;
+        background-color: #e9ecef; /* Light grey background */
+        border-radius: 8px;
+        margin-bottom: 2rem;
+    }
+    .hero-section h1 {
+        font-size: 2.5em;
+        margin-bottom: 0.5rem;
+    }
+    .hero-section .lead {
+        font-size: 1.2em;
+        color: #495057;
+        margin-bottom: 1rem;
+    }
+    .hero-section hr {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        border: 0;
+        border-top: 1px solid rgba(0,0,0,.1);
+    }
+    .home-actions a.button-style {
+        margin: 0.5rem;
+        padding: 0.8rem 1.5rem; /* Slightly larger buttons for home page */
+    }
+
+    .features-overview h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    .feature-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem; /* Space between cards */
+        justify-content: center;
+    }
+    .card {
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 6px;
+        padding: 1.5rem;
+        flex-basis: calc(50% - 2rem); /* Two cards per row on larger screens */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        text-align: center;
+    }
+    .card h3 {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        color: #007bff;
+    }
+    .card p {
+        font-size: 0.95em;
+        color: #6c757d;
+    }
+    @media (max-width: 768px) {
+        .feature-cards .card {
+            flex-basis: calc(100% - 2rem); /* Full width on smaller screens */
+        }
+    }
+</style>
+{% endblock %}
